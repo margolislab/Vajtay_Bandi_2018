@@ -43,4 +43,14 @@ results = lmer(Angle ~ Day + Stim + (Day|Mice), data = EMX_PA)
 anova(results, type = "I")
 
 
+results = lmer(Ai ~ Day + (1|Mouse), data = AiEMX)
+anova(results, type = "I")
+
+
+var.test(ChatvEMX$Chat_Pre_V, ChatvEMX$EMX_Pre_V)
+t.test(ChatvEMX$Chat_Pre_V, ChatvEMX$EMX_Pre_V, var.equal = TRUE)
+
+
+var.test(ChatvEMX$Chat_Pre_V, ChatvEMX$EMX_7d_V)
+t.test(ChatvEMX$Chat_Pre_V, ChatvEMX$EMX_7d_V, var.equal = TRUE)
 
